@@ -1,0 +1,105 @@
+        :root {
+            --bg-color: #f0e9e1;
+            --primary-color: #d97746;
+            --text-color: #5d5145;
+            --light-shadow: #ffffff;
+            --dark-shadow: #d1c8be;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            border-radius: 30px;
+            background: var(--bg-color);
+            box-shadow: 12px 12px 24px var(--dark-shadow),
+                        -12px -12px 24px var(--light-shadow);
+            transition: all 0.3s ease;
+        }
+
+        #text-input {
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 15px 20px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            width: 250px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            box-shadow: inset 6px 6px 12px var(--dark-shadow),
+                        inset -6px -6px 12px var(--light-shadow);
+        }
+
+        #text-input::placeholder {
+            color: #a89f95;
+        }
+
+        #text-input:focus {
+            box-shadow: inset 8px 8px 16px var(--dark-shadow),
+                        inset -8px -8px 16px var(--light-shadow);
+        }
+
+        #speak-button {
+            border: none;
+            outline: none;
+            margin-left: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--bg-color);
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 6px 6px 12px var(--dark-shadow),
+                        -6px -6px 12px var(--light-shadow);
+        }
+
+        #speak-button:hover {
+            box-shadow: 8px 8px 16px var(--dark-shadow),
+                        -8px -8px 16px var(--light-shadow);
+            transform: translateY(-2px);
+        }
+
+        #speak-button:active {
+            transform: translateY(0);
+            box-shadow: inset 4px 4px 8px var(--dark-shadow),
+                        inset -4px -4px 8px var(--light-shadow);
+        }
+
+        #speak-button.speaking {
+            animation: pulse 1.2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+
+        .icon {
+            width: 28px;
+            height: 28px;
+            fill: var(--text-color);
+            transition: fill 0.3s ease;
+        }
+
+        #speak-button:hover .icon {
+            fill: var(--primary-color);
+        }
+
+        #speak-button:active .icon {
+            transform: scale(0.95);
+        }
